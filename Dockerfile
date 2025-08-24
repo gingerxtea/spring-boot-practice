@@ -1,11 +1,8 @@
-FROM eclipse-temurin:21-jdk
-
+FROM maven:3.8.3-jdk-11 AS build
+COPY . /app
 WORKDIR /app
+RUN mvn package -DskipTests
 
-COPY .mvn/ .mvn
-COPY mvnw pom.xml ./
-RUN ./mvnw dependency:go-offline
-
-COPY src ./src
-
-CMD ["./mvnw", "spring-boot:run"]
+FROM openjdk:11-jre-slim
+COPY --from=build /app/target/my-application.jar /app.jar
+ENTRYPOINT ["java", "-jar", "/app.jar"]
