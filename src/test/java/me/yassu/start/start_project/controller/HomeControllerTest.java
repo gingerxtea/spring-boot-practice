@@ -4,6 +4,7 @@ import io.qameta.allure.*;
 import me.yassu.start.start_project.dto.HomeRequestDTO;
 import me.yassu.start.start_project.dto.HomeResponseDTO;
 import me.yassu.start.start_project.entity.Home;
+import me.yassu.start.start_project.repository.HomeRepository;
 import me.yassu.start.start_project.service.HomeService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -16,6 +17,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.web.servlet.MockMvc;
 
+import javax.sql.DataSource;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -28,6 +30,12 @@ public class HomeControllerTest {
 
     @Mock
     private HomeService homeService;
+
+    @Mock
+    private DataSource dataSource;
+
+    @Mock
+    private HomeRepository homeRepository;
 
     @InjectMocks
     private HomeController homeController;
