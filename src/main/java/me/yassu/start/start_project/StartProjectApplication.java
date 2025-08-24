@@ -7,10 +7,8 @@ import org.springframework.cache.annotation.EnableCaching;
 @SpringBootApplication
 @EnableCaching
 public class StartProjectApplication {
-
 	public static void main(String[] args) {
 		System.setProperty("user.timezone", "Asia/Kolkata");
 		SpringApplication.run(StartProjectApplication.class, args);
 	}
-
 }

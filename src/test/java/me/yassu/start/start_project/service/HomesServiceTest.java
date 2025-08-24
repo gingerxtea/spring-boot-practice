@@ -4,6 +4,7 @@ import me.yassu.start.start_project.dto.HomeRequestDTO;
 import me.yassu.start.start_project.dto.HomeResponseDTO;
 import me.yassu.start.start_project.entity.Home;
 import me.yassu.start.start_project.repository.HomeRepository;
+import me.yassu.start.start_project.service.impl.HomeServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -26,7 +27,7 @@ public class HomesServiceTest {
     private HomeRepository homeRepository;
 
     @InjectMocks
-    private HomeService homeService;
+    private HomeServiceImpl homeService;
 
     @Test
     public void testGetAllHomesService(){
