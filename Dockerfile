@@ -1,8 +1,8 @@
-FROM maven:3.8.3-jdk-11 AS build
+FROM eclipse-temurin:21-jdk-alpine AS build
 COPY . /app
 WORKDIR /app
 RUN mvn package -DskipTests
 
-FROM openjdk:11-jre-slim
+FROM openjdk:21-slim
 COPY --from=build /app/target/my-application.jar /app.jar
 ENTRYPOINT ["java", "-jar", "/app.jar"]
