@@ -1,9 +1,6 @@
 name: Spring Boot CI
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
     branches:
       - main
@@ -20,5 +17,6 @@ jobs:
         with:
           java-version: '21'
           distribution: 'temurin'
+          cache: 'maven'
       - name: build
         run: mvn -B package --file pom.xml
