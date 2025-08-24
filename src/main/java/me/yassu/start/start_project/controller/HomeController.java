@@ -51,7 +51,7 @@ public class HomeController {
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public ResponseEntity<HomeResponseDTO> getHomeById(@PathVariable(name = "id") int id){
-        return ResponseEntity.ok(homeService.getHomeById(id));
+        return ResponseEntity.ok(homeService.getHomeById(id))
     }
 
     @PostMapping(
