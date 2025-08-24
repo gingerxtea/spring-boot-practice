@@ -86,7 +86,7 @@ public class HomeController {
         HikariDataSource hds = (HikariDataSource) dataSource;
         logger.info("url: {}",hds.getJdbcUrl());
         logger.info("username: {}",hds.getUsername());
-        logger.info("max pool size; {}", hds.getMaximumPoolSize());
+        logger.info("max pool size: {}", hds.getMaximumPoolSize());
         logger.info("idle size; {}", hds.getMinimumIdle());
         logger.info("test query: {}",hds.getConnectionTestQuery());
         return ResponseEntity.ok(hds);
