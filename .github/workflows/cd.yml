@@ -50,7 +50,7 @@ jobs:
             sudo apt-get update
             sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
             sudo docker run hello-world
-            sudo docker pull ${{ secrets.DOCKER_USERNAME }}/ci-cd-tutorial:latest
-            sudo docker stop ci-cd-tutorial || true
-            sudo docker rm ci-cd-tutorial || true
+            sudo docker pull ${{ secrets.DOCKER_USERNAME }}/spring-boot-practice:latest
+            sudo docker stop spring-boot-practice || true
+            sudo docker rm spring-boot-practice || true
             sudo docker run -d --name spring-boot-practice -p 8080:8080 ${{ secrets.DOCKER_USERNAME }}/spring-boot-practice:latest
